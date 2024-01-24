@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/reproductor/tanto3.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Tanto Color - Album</title>
+</head>
+<body>
+    <div class="conteiner">
+        <div class="nowplaying">
+            <div class="atras">
+                <div class="boton-atras">
+                    <a href="/index.html">
+                        <img src="/pics/atras-blanco.png" alt="atras" width="30px">
+                    </a>
+                </div>
+                <div class="info">
+                    <p id="Album">Tanto Color</p>
+                    <p id="Artista">Sittah</p>
+                </div>
+            </div>
+            <img src="/pics/portada-3-300.jpg" alt="cover" width="300px">
+            <script>
+                function cambiarTrack(track) {
+                   var value =  track.getAttribute("value")
+                   viejo_audio = document.getElementById("reproductor")
+                   audio_padre = viejo_audio.parentNode
+                   audio_padre.removeChild(viejo_audio)
+                   nuevo_audio = document.createElement("audio")
+                   nuevo_audio.setAttribute("id","reproductor")
+                   nuevo_audio.setAttribute("controls","controls")
+                   nuevo_audio.setAttribute("autoplay", "autoplay")
+                   source = document.createElement("source")
+                   source.setAttribute("src", value)
+                   source.setAttribute("type", "audio/mpeg")
+                   source.setAttribute("id", "reproductorSource")
+                   nuevo_audio.appendChild(source)
+                   audio_padre.appendChild(nuevo_audio)}
+                function cargarReproductor() {
+                         var select = document.getElementById("selectTrack")
+                         var value = select.options[0].getAttribute("value")
+                   nuevo_audio = document.createElement("audio")
+                   nuevo_audio.setAttribute("id","reproductor")
+                   nuevo_audio.setAttribute("controls", "controls")       
+                   source = document.createElement("source")
+                   source.setAttribute("src", value)
+                   source.setAttribute("type", "audio/mpeg")
+                   source.setAttribute("id", "reproductorSource")
+                   nuevo_audio.appendChild(source)
+                   padre = document.getElementById("reproductorBox")
+                   padre.appendChild(nuevo_audio)
+                }
+                </script>
+        </div>
+        <div class="cola">
+        <!--
+                <li>1. Flow Espiritual</li>
+            <li>1. Flow Espiritual</li>
+            <li>1. Flow Espiritual</li>
+            <li>1. Flow Espiritual</li>
+            <li>1. Flow Espiritual</li>
+            <li>1. Flow Espiritual</li>
+            <li>1. Flow Espiritual</li>
+            <li>1. Flow Espiritual</li>
+            <li>1. Flow Espiritual</li>
+            <li>1. Flow Espiritual</li>
+            <li>1. Flow Espiritual</li>
+        -->
+        <!--
+            <input type="button" value="1. Flow Espiritual">
+            <input type="button" value="2. Camara Lenta">
+            <input type="button" value="3. Ostentacion">
+            <input type="button" value="4. Que Suba">
+            <input type="button" value="5. Anaqueles">
+            <input type="button" value="6. Ojos en Llamas">
+            <input type="button" value="7. Tanto Color">
+            <input type="button" value="8. Alas de Carton">
+            <input type="button" value="9. Alanoico">
+            <input type="button" value="10. Flama">
+            <input type="button" value="11. Todo Esta Muy Bien">
+        -->    
+
+            <div id="reproductorBox"></div>
+            <select id = "selectTrack" multiple onchange="cambiarTrack(this.options[this.selectedIndex]);">
+            <option value="/album\1. Flow Espiritual.mp3">1. Flow Espiritual</option>
+            <option value="/album\2. Camara Lenta.mp3">2. Camara Lenta</option>
+            <option value="/album\3. Ostentacion.mp3">3. Ostentacion</option>
+            <option value="/album\4. Que Suba.mp3">4. Que Suba</option>
+            <option value="/album\5. Anaqueles.mp3">5. Anaqueles</option>
+            <option value="/album\6. Ojos en Llamas.mp3">6. Ojos en Llamas</option>
+            <option value="/album\7. Tanto Color.mp3">7. Tanto Color</option>
+            <option value="/album\8. Alas de Carton.mp3">8. Alas de Carton</option>
+            <option value="/album\9. Alanoico.mp3">9. Alanoico</option>
+            <option value="/album\10. Flama.mp3">10. Flama</option>
+            <option value="/album\11. Todo Esta Muy Bien.mp3">11. Todo Esta Muy Bien</option>
+            </select>
+            <script>cargarReproductor();</script>
+        </div>
+    </div>
+    <footer>
+        <a href="/index.html">
+            <img src="/pics/sittah logo.png" alt="sittah" width="100px">
+        </a>
+    </footer>
+</body>
+</html>
