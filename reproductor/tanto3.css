@@ -45,9 +45,6 @@ body {
 }
 
 select {
-	appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
     background-color: rgba(201, 181, 143, 0);
     height: 200px;
     width: 300px;
