@@ -8,7 +8,7 @@ body {
       rgba(0, 0, 0, 0.20),
       rgba(0, 0, 0, 0.20)
     ),
-    url(background/inicio.jpg);
+    url(background/iniciofinfin.jpg);
     background-position: center center;
     background-size: cover;
     color: black;
@@ -60,12 +60,12 @@ footer {
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        padding: 100px;
+        padding: 70px;
         
     }
 
     img {
-        max-width: 250px;
+        max-width: 300px;
     }
 
     #opciones a {
